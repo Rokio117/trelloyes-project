@@ -1,10 +1,13 @@
 import React from 'react';
-import STORE from 'store.js';
+import STORE from './store.js';
 import './App.css';
 
-import list from 'List.js'
+import List from './List.js'
+console.log(STORE)
 
-
+const cardList = STORE.lists
+console.log(cardList);
+console.log(cardList.map(cardList => cardList.cardIds))
 
 function App(STORE) {
   return (
@@ -12,7 +15,15 @@ function App(STORE) {
       <header className="App-header">
         <h1>Trelloyes!</h1>
         <div className="App-list">
-          {STORE.lists.map(lists => list(lists.header, lists.cardIds.map(cardIds => STORE.allCards.cardIds)))}
+          {cardList.map(function (cardList) 
+          {return List(cardList.header, cardList.cardIds.map(function (cards){ 
+            let newId = cards
+            console.log('newId in App function', newId)
+            console.log(STORE.cards, 'STORE.cards in APP')
+            return STORE.cards
+          })
+            )}
+            )}
         </div>
       </header>
     </main>
