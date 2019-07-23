@@ -3,11 +3,13 @@ import STORE from './store.js';
 import './App.css';
 
 import List from './List.js'
-console.log(STORE)
+console.log(STORE, 'STORE global')
 
 const cardList = STORE.lists
+const allStoreCards = STORE.allCards
+console.log(typeof(allStoreCards))
 console.log(cardList);
-console.log(cardList.map(cardList => cardList.cardIds))
+console.log(cardList.map(cardList => cardList.cardIds), 'mapped cardList')
 
 function App(STORE) {
   return (
@@ -17,10 +19,11 @@ function App(STORE) {
         <div className="App-list">
           {cardList.map(function (cardList) 
           {return List(cardList.header, cardList.cardIds.map(function (cards){ 
-            let newId = cards
-            console.log('newId in App function', newId)
-            console.log(STORE.cards, 'STORE.cards in APP')
-            return STORE.cards
+            console.log('cardIds', cards)
+            // console.log(cards, 'cards')
+            // console.log(allStoreCards.a, 'allCards.a')
+            // console.log(allStoreCards.cards, 'loop of card objects')
+            // return allStoreCards.cards
           })
             )}
             )}
