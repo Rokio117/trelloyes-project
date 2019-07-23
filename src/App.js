@@ -1,8 +1,8 @@
 import React from 'react';
-import STORE from './src/store';
+import STORE from 'store.js';
 import './App.css';
-import card from './src/Card'
-import list from './src/list'
+
+import list from 'List.js'
 
 
 
