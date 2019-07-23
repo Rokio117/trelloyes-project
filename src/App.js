@@ -11,6 +11,8 @@ console.log(typeof(allStoreCards))
 console.log(cardList);
 console.log(cardList.map(cardList => cardList.cardIds), 'mapped cardList')
 
+console.log(allStoreCards.map(list => list.value))//.map(cards => cards), 'map test')
+
 function App(STORE) {
   return (
     <main className='App'>
